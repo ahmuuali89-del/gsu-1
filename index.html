@@ -1,19 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration</title>
+
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --radius:12px;
+      --max-width:900px;
+      --gap:16px;
+      font-family: Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+      padding:30px 15px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+      padding:25px;
+    }
+
+    .brand{text-align:center; margin-bottom:20px;}
+    .brand h1{margin:0; font-size:1.4rem;}
+    .subtitle{color:var(--muted); font-size:0.9rem;}
+
+    fieldset{
+      border:1px solid #e7eaff;
+      padding:15px;
+      border-radius:10px;
+      margin-bottom:15px;
+    }
+
+    legend{font-weight:bold;}
+
+    label{display:block; margin-top:12px; margin-bottom:5px;}
+
+    input, select, textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #d9e2f5;
+      font-size:0.95rem;
+    }
+
+    input:focus, select:focus, textarea:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(37,99,235,0.1);
+      outline:none;
+    }
+
+    .row{display:flex; gap:var(--gap);}
+    .col{flex:1;}
+
+    .form-actions{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .btn{
+      padding:10px 16px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      font-size:0.95rem;
+      font-weight:600;
+    }
+
+    .primary{background:var(--accent); color:white;}
+    .ghost{background:#f1f5ff; color:#333;}
+
+    .footer-note{font-size:0.85rem; color:var(--muted); margin-top:10px;}
+
+    @media (max-width:700px){
+      .row{flex-direction:column;}
+    }
+  </style>
 </head>
+
 <body>
-    <h1 style="background-color: red;">welcome to gsu</h1><s></s>
-    <h2 style="background-color: aqua;">new course</h2>
-    <h3>ruddyrfrydcyf</h3>
-    <h4>waa fasax jaamada</h4>
-    <style>
-        body{
-            background-color: blueviolet;
-        }
-    </style>
+  <div class="container">
+    <div class="brand">
+      <h1>Student Registration Form</h1>
+      <p class="subtitle">Fill in the required information</p>
+    </div>
+
+    <form action="#" method="post">
+      
+      <fieldset>
+        <legend>Student Information</legend>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="e.g. Ahmed Mohamed" required>
+
+        <div class="row">
+          <div class="col">
+            <label>Date of Birth</label>
+            <input type="date" required>
+          </div>
+          <div class="col">
+            <label>Gender</label>
+            <select required>
+              <option disabled selected>Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>Class / Grade</label>
+            <input type="text" placeholder="Grade 7" required>
+          </div>
+          <div class="col">
+            <label>Student ID</label>
+            <input type="text" placeholder="2025-001" required>
+          </div>
+        </div>
+
+        <label>Photo (optional)</label>
+        <input type="file" accept="image/*">
+      </fieldset>
+
+      <fieldset>
+        <legend>Parent / Guardian</legend>
+
+        <label>Guardian Name</label>
+        <input type="text" placeholder="Fatima Ali" required>
+
+        <div class="row">
+          <div class="col">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+252 6xx-xxxxxx" required>
+          </div>
+          <div class="col">
+            <label>Email (optional)</label>
+            <input type="email" placeholder="example@mail.com">
+          </div>
+        </div>
+
+        <label>Home Address</label>
+        <textarea rows="3" placeholder="Street, City, Area" required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Notes (optional)</legend>
+        <textarea rows="3" placeholder="Special notes or medical info..."></textarea>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="reset" class="btn ghost">Reset</button>
+        <button type="submit" class="btn primary">Submit</button>
+      </div>
+
+      <p class="footer-note">Make sure all information is correct before submitting.</p>
+
+    </form>
+  </div>
 </body>
 </html>
